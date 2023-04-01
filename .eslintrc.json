@@ -44,6 +44,13 @@
     "@typescript-eslint/no-unused-vars": "warn",
     "import/prefer-default-export": "off",
     "@typescript-eslint/no-var-requires": "error",
-    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }]
+    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }],
+    "import/extensions": [
+      "error",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   }
 }
