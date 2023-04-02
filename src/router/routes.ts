@@ -1,2 +1,3 @@
-export const HotelListRoute = "/:hotelsProvider";
-export const HotelDetailsRoute = "/:hotelsProvider/:hotelId";
+import { UrlParams } from "../utils/urlParams";
+
+export const HotelListRoute = `/:${UrlParams.hotelsProvider}`;
