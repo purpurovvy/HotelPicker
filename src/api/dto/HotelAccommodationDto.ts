@@ -1,4 +1,4 @@
-export interface HotelAccomodationDto {
+export interface HotelAccommodationDto {
   ratePlans: RatePlan[];
   rooms: Room[];
 }
