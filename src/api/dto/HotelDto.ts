@@ -1,4 +1,6 @@
-export interface HotelListDto {
+import { HotelAccommodationDto } from "./HotelAccommodationDto";
+
+export interface HotelDto {
   address1: string;
   address2: string;
   checkInHours: string;
@@ -15,9 +17,10 @@ export interface HotelListDto {
   name: string;
   position: PositionProperties[];
   postcode: string;
-  starRating: string;
   telephone: string;
   town: string;
+  hotelAccommodation: HotelAccommodationDto;
+  starRating: number;
 }
 
 interface Facility {
