@@ -1,6 +1,15 @@
 import { createTheme } from "@mui/material";
 
 export const theme = createTheme({
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          minWidth: "unset",
+        },
+      },
+    },
+  },
   typography: {
     h1: {
       fontSize: "1.68755rem",
