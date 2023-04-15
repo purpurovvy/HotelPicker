@@ -1,5 +1,5 @@
 import { Stack, SxProps } from "@mui/material";
-import { Star, StarBorder } from "@mui/icons-material";
+import { Star } from "@mui/icons-material";
 import { useId } from "react";
 
 interface StarRatingProps {
@@ -23,7 +23,10 @@ export const StarRating = ({
         <Star key={`filledStar-${key}-${id}`} />
       ))}
       {outlinedStarsArray.map((outlinedStar, key) => (
-        <StarBorder key={`outlinedStar-${key}-${id}`} />
+        <Star
+          key={`disabledStar-${key}-${id}`}
+          sx={{ color: "text.disabled" }}
+        />
       ))}
     </Stack>
   );

@@ -1,28 +1,42 @@
 import { useGetHotelList } from "../api/api.hookCalls";
-import { Stack } from "@mui/material";
-import { HotelCard } from "../components/HotelCard/HotelCard";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { HotelFilterPanel } from "../components/HotelFilterPanel/HotelFilterPanel";
+import { HotelModel } from "../api/model/HotelModel";
+import { SplashScreen } from "../components/commons/SplashScreen/SplashScreen";
+import { PageLayout } from "../layout/PageLayout";
+import { HotelList } from "../components/HotelList/HotelList";
+import { UnknownError } from "../components/commons/UnknownError";
 
 export const HotelListPage = (): JSX.Element => {
-  const { data } = useGetHotelList();
+  const {
+    data: hotelApiData,
+    isSuccess,
+    isLoading,
+    isError,
+  } = useGetHotelList();
+  const [hotelFilteredData, setHotelFilteredData] = useState<HotelModel[] | []>(
+    []
+  );
 
-  useEffect(() => {}, [data]);
+  useEffect(() => {
+    if (isSuccess) {
+      setHotelFilteredData(hotelApiData);
+    }
+  }, [isSuccess]);
 
   return (
-    <>
-      <Stack></Stack>
-      <Stack
-        direction="column"
-        sx={{
-          mx: "auto",
-          width: { xs: "94%", sm: "90%", md: "85%", lg: "80%" },
-          maxWidth: "1920px",
-        }}
-      >
-        {data?.map((hotel) => (
-          <HotelCard hotelDetails={hotel} key={hotel.id} />
-        ))}
-      </Stack>
-    </>
+    <PageLayout>
+      <SplashScreen isVisible={isLoading} />
+      {hotelApiData && (
+        <>
+          <HotelFilterPanel
+            hotelData={hotelApiData}
+            setHotelData={setHotelFilteredData}
+          />
+          <HotelList hotelData={hotelFilteredData} />
+        </>
+      )}
+      {isError && <UnknownError />}
+    </PageLayout>
   );
 };

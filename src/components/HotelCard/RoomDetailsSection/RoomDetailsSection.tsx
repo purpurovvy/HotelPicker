@@ -1,4 +1,4 @@
-import { Room } from "../../../api/model/HotelAccommodationsModel";
+import { Room } from "../../../api/model/HotelAccommodationModel";
 import { Stack, Typography } from "@mui/material";
 
 interface RoomDetailsSectionProps {
@@ -19,7 +19,7 @@ export const RoomDetailsSection = ({
         sx={{
           width: { xs: "100%", sm: "20%" },
           minWidth: "120px",
-          "& > *": { mr: { xs: "0.5rem", sm: 0 } },
+          "& > .MuiTypography-root": { mr: { xs: "0.5rem", sm: 0 } },
           mb: { xs: "0.5rem", sm: 0 },
         }}
       >
