@@ -23,7 +23,7 @@ export const HotelDetails = ({
       <Stack direction="column" sx={{ flex: 1 }}>
         <Stack
           direction="row"
-          sx={{ flex: 1, justifyContent: "space-between" }}
+          sx={{ width: "100%", justifyContent: "space-between" }}
         >
           <Typography variant="h5">{hotelDetails.name}</Typography>
           <StarRating

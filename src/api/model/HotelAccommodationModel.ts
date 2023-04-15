@@ -1,4 +1,4 @@
-export interface HotelAccommodationsModel {
+export interface HotelAccommodationModel {
   rooms: Room[];
 }
 export interface Room {
