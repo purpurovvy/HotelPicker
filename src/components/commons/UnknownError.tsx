@@ -1,4 +1,4 @@
-import { ErrorAnimation } from "./ErrorAnimation";
+import { ErrorAnimation } from "./ErrorAnimation/ErrorAnimation";
 import { Typography } from "@mui/material";
 
 interface UnknownErrorProps {

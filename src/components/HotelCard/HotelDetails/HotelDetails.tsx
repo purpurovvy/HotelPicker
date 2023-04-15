@@ -2,6 +2,7 @@ import { Stack, Typography } from "@mui/material";
 import { StarRating } from "../../commons/StarRating";
 import { HotelModel } from "../../../api/model/HotelModel";
 import { ImageSlider } from "../../commons/ImageSlider/ImageSlider";
+import { HotelDetailsStyles } from "./HotelDetails.styles";
 
 interface HotelDetailsProps {
   hotelDetails: HotelModel;
@@ -15,20 +16,14 @@ export const HotelDetails = ({
     title: `${hotelDetails.name}-image-${index}`,
   }));
   return (
-    <Stack
-      direction={{ xs: "column", sm: "row" }}
-      sx={{ flex: 1, pb: "0.5rem" }}
-    >
+    <Stack sx={HotelDetailsStyles.container}>
       <ImageSlider slides={slides} />
-      <Stack direction="column" sx={{ flex: 1 }}>
-        <Stack
-          direction="row"
-          sx={{ width: "100%", justifyContent: "space-between" }}
-        >
+      <Stack sx={HotelDetailsStyles.descriptionContainer}>
+        <Stack sx={HotelDetailsStyles.starAndHotelNameContainer}>
           <Typography variant="h5">{hotelDetails.name}</Typography>
           <StarRating
             filledStars={hotelDetails.starRating}
-            sx={{ color: "warning.main" }}
+            sx={HotelDetailsStyles.star}
           />
         </Stack>
         <Typography variant="subtitle2">{hotelDetails.address1}</Typography>

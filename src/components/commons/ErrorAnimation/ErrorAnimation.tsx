@@ -2,8 +2,9 @@
 import React from "react";
 import { useLottie } from "lottie-react";
 import { Stack } from "@mui/material";
-import LottieErrorAnimation from "../../assets/lottieAnimations/error.json";
-import Lottie404Animation from "../../assets/lottieAnimations/404.json";
+import LottieErrorAnimation from "../../../assets/lottieAnimations/error.json";
+import Lottie404Animation from "../../../assets/lottieAnimations/404.json";
+import { ErrorAnimationStyles } from "./ErrorAnimation.styles";
 
 type ErrorAnimationType = "404" | "unknown";
 
@@ -32,20 +33,8 @@ export const ErrorAnimation = ({
   const { View } = useLottie(options);
 
   return (
-    <Stack direction="column" sx={{ my: "2rem" }}>
-      <Stack
-        sx={{
-          width: "80dvw",
-          height: "50dvh",
-          maxHeight: "500px",
-          m: "auto",
-          overflow: "hidden",
-        }}
-        justifyContent="center"
-        alignItems="center"
-      >
-        {View}
-      </Stack>
+    <Stack sx={ErrorAnimationStyles.errorContainer}>
+      <Stack sx={ErrorAnimationStyles.animationContainer}>{View}</Stack>
       {children}
     </Stack>
   );

@@ -1,0 +1,38 @@
+export const ImageSliderStyles = {
+  arrowStyles: {
+    position: "absolute",
+    top: "50%",
+    transform: "translate(0,-50%)",
+    fontSize: "45px",
+    color: "common.white",
+    zIndex: 2,
+    cursor: "pointer",
+    width: "2rem",
+    height: "2rem",
+  },
+  containerStyling: {
+    position: "relative",
+    width: { xs: "100%", sm: "24%" },
+    minWidth: "11.25rem",
+    height: "11.25rem",
+    borderRadius: "5px",
+    mb: { xs: "0.5rem", sm: 0 },
+    mr: { xs: 0, sm: "1rem" },
+  },
+  slideStyling: {
+    position: "absolute",
+    left: 0,
+    top: 0,
+    width: "100%",
+    height: "100%",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    transitionDuration: "1000ms",
+    opacity: 0,
+    zIndex: 0,
+  },
+  activeSlideStyles: {
+    opacity: 1,
+    zIndex: 1,
+  },
+};

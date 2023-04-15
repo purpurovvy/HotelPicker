@@ -1,6 +1,7 @@
-import { Stack, Theme } from "@mui/material";
+import { Stack } from "@mui/material";
 import { Loading } from "./Loading";
 import { useEffect, useState } from "react";
+import { SplashScreenStyles } from "./SplashScreen.styles";
 
 interface SplashScreenProps {
   isVisible: boolean;
@@ -29,15 +30,9 @@ export const SplashScreen = ({
       alignItems="center"
       data-testid="splashScreen"
       sx={{
-        zIndex: 1000,
-        position: "fixed",
-        backgroundColor: (theme: Theme) => theme.palette.common.black,
-        width: "100dvw",
-        height: "100dvh",
-        overflow: "hidden",
-        opacity: isVisible ? 1 : 0,
+        ...SplashScreenStyles,
         transition: `opacity ${transitionTimeInSeconds}s`,
-        transitionTimingFunction: "cubic-bezier(.73,-1.32,.69,.63)",
+        opacity: isVisible ? 1 : 0,
       }}
     >
       <Loading />
