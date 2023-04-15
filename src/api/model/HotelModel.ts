@@ -1,4 +1,4 @@
-import { HotelAccommodationsModel } from "./HotelAccommodationsModel";
+import { HotelAccommodationModel } from "./HotelAccommodationModel";
 
 export interface HotelModel {
   address1: string;
@@ -8,7 +8,7 @@ export interface HotelModel {
   starRating: number;
   town: string;
   id: string;
-  hotelAccommodation: HotelAccommodationsModel;
+  hotelAccommodation: HotelAccommodationModel;
 }
 
 interface Image {

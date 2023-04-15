@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { hotelDetailsUri, providerHotelListUri } from "./api.endpoints";
+import { hotelDetailsUri, hotelProviderListUri } from "./api.endpoints";
 import { ApiKeys } from "./api.keys";
 import { useGetUrlParams } from "../utils/useGetUrlParams";
 import { HotelAccommodationDto } from "./dto/HotelAccommodationDto";
@@ -9,7 +9,7 @@ import { HotelDto } from "./dto/HotelDto";
 
 export const useGetHotelList = () => {
   const { hotelsProvider } = useGetUrlParams();
-  const requestUrl = providerHotelListUri(hotelsProvider);
+  const requestUrl = hotelProviderListUri(hotelsProvider);
   return useQuery<HotelDto[], Error, HotelModel[]>(
     [`${hotelsProvider}-${ApiKeys.hotelList}`],
     () =>
