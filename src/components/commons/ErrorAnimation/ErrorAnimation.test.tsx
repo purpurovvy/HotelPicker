@@ -13,7 +13,7 @@ describe("ErrorAnimation", () => {
     expect(animationContainer.children[0].children[0].tagName).toBe("svg");
   });
 
-  test("Should render given children", () => {
+  it("Should render given children", () => {
     const { getByText } = render(
       <ErrorAnimation error="404">
         <p>Error message</p>
