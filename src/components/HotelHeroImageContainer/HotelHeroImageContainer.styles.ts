@@ -8,6 +8,7 @@ export const HotelHeroImageContainerStyles = {
     mx: "auto",
     color: "common.white",
     fontStyle: "oblique",
+    fontSize: { xs: "1.5rem", sm: "1.68755rem" },
   },
   container: {
     height: "300px",
