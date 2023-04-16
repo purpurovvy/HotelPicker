@@ -33,8 +33,16 @@ export const ErrorAnimation = ({
   const { View } = useLottie(options);
 
   return (
-    <Stack sx={ErrorAnimationStyles.errorContainer}>
-      <Stack sx={ErrorAnimationStyles.animationContainer}>{View}</Stack>
+    <Stack
+      sx={ErrorAnimationStyles.errorContainer}
+      data-testid="animation-container"
+    >
+      <Stack
+        sx={ErrorAnimationStyles.animationContainer}
+        data-testid={`lottieAnimation-${error}`}
+      >
+        {View}
+      </Stack>
       {children}
     </Stack>
   );
