@@ -5,7 +5,8 @@ import { Counter } from "../commons/Counter";
 import { useState } from "react";
 import { HotelModel } from "../../api/model/HotelModel";
 import { filterHotelsByRequirements } from "./filterHotelsByRequirements";
-import { HotelHeroImageContainer } from "../HotelHeroImageContainer";
+import { HotelHeroImageContainer } from "../HotelHeroImageContainer/HotelHeroImageContainer";
+import { HotelFilterPanelStyles } from "./HotelFilterPanel.styles";
 
 interface HotelFilterPanelProps {
   hotelData: HotelModel[] | [];
@@ -36,22 +37,7 @@ export const HotelFilterPanel = ({
   }, [childrenAccommodationCount, adultsAccommodationCount, starAssessment]);
   return (
     <HotelHeroImageContainer>
-      <Stack
-        direction={{ xs: "column", sm: "row" }}
-        justifyContent="space-between"
-        alignItems="center"
-        sx={{
-          mx: "auto",
-          border: "1px solid #000",
-          p: "0.25rem",
-          width: { xs: "90%", sm: "65%" },
-          maxWidth: "600px",
-          my: "1rem",
-          boxShadow:
-            "rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,rgba(0, 0, 0, 0.12) 0px 1px 3px 0px",
-          backgroundColor: "background.default",
-        }}
-      >
+      <Stack sx={HotelFilterPanelStyles}>
         <StarFilter
           starsValue={starAssessment}
           changeStarsValue={setStarAssessment}

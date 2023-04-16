@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { ErrorAnimation } from "../components/commons/ErrorAnimation";
+import { ErrorAnimation } from "../components/commons/ErrorAnimation/ErrorAnimation";
 import { PageLayout } from "../layout/PageLayout";
 
 export const NotFoundPage = (): JSX.Element => {

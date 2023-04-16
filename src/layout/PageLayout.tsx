@@ -6,5 +6,5 @@ interface LayoutProps {
 }
 
 export const PageLayout = ({ children }: LayoutProps): JSX.Element => {
-  return <Stack sx={{ maxWidth: "1920px" }}>{children}</Stack>;
+  return <Stack sx={{ maxWidth: "1920px", mx: "auto" }}>{children}</Stack>;
 };

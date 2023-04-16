@@ -2,6 +2,7 @@ import { Stack } from "@mui/material";
 import { HotelCard } from "../HotelCard/HotelCard";
 import { HotelModel } from "../../api/model/HotelModel";
 import { UnknownError } from "../commons/UnknownError";
+import { HotelListStyles } from "./HotelList.styles";
 
 interface HotelListProps {
   hotelData: [] | HotelModel[];
@@ -10,13 +11,7 @@ interface HotelListProps {
 export const HotelList = ({ hotelData }: HotelListProps): JSX.Element => {
   const isAnyHotelAvailable = hotelData.length !== 0;
   return (
-    <Stack
-      direction="column"
-      sx={{
-        mx: "auto",
-        width: { xs: "94%", sm: "85%", md: "80%", lg: "75%" },
-      }}
-    >
+    <Stack sx={HotelListStyles}>
       {hotelData?.map((hotel) => (
         <HotelCard hotelDetails={hotel} key={hotel.id} />
       ))}

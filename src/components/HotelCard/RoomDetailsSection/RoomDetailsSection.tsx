@@ -1,5 +1,6 @@
 import { Room } from "../../../api/model/HotelAccommodationModel";
 import { Stack, Typography } from "@mui/material";
+import { RoomDetailsSectionStyles } from "./RoomDetailsSection.styles";
 
 interface RoomDetailsSectionProps {
   roomDetails: Room;
@@ -9,20 +10,8 @@ export const RoomDetailsSection = ({
   roomDetails,
 }: RoomDetailsSectionProps): JSX.Element => {
   return (
-    <Stack
-      direction={{ xs: "column", sm: "row" }}
-      component="section"
-      justifyContent="space-between"
-    >
-      <Stack
-        direction={{ xs: "row", sm: "column" }}
-        sx={{
-          width: { xs: "100%", sm: "20%" },
-          minWidth: "120px",
-          "& > .MuiTypography-root": { mr: { xs: "0.5rem", sm: 0 } },
-          mb: { xs: "0.5rem", sm: 0 },
-        }}
-      >
+    <Stack sx={RoomDetailsSectionStyles.container}>
+      <Stack sx={RoomDetailsSectionStyles.roomNumbersContainer}>
         <Typography variant="subtitle2">
           <strong>{roomDetails.name}</strong>
         </Typography>
@@ -33,12 +22,7 @@ export const RoomDetailsSection = ({
           Children: <strong>{roomDetails.occupancy.maxChildren}</strong>
         </Typography>
       </Stack>
-      <Stack
-        sx={{
-          width: { xs: "100%", sm: "75%" },
-          "& >p": { textAlign: "justify" },
-        }}
-      >
+      <Stack sx={RoomDetailsSectionStyles.roomDescriptionContainer}>
         <Typography variant="body2">
           {roomDetails.longDescription ||
             "There is no additional description for this accommodation"}
