@@ -69,7 +69,7 @@ describe("filterHotelsByRequirements", () => {
   });
 
   it("Should return an empty array if the input is invalid", () => {
-    //@ts-expect-error
+    //@ts-expect-error Expected that null is not proper argument
     const result = filterHotelsByRequirements(-1, -1, -1, null);
     expect(result).toEqual([]);
   });
