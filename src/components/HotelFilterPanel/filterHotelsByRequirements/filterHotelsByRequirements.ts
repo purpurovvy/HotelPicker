@@ -1,4 +1,4 @@
-import { HotelModel } from "../../api/model/HotelModel";
+import { HotelModel } from "../../../api/model/HotelModel";
 
 export function filterHotelsByRequirements(
   starRating: number,

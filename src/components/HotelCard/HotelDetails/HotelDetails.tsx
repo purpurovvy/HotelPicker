@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import { StarRating } from "../../commons/StarRating";
+import { StarRating } from "../../commons/StarRating/StarRating";
 import { HotelModel } from "../../../api/model/HotelModel";
 import { ImageSlider } from "../../commons/ImageSlider/ImageSlider";
 import { HotelDetailsStyles } from "./HotelDetails.styles";

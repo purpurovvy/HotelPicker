@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter } from "react-router-dom";
 import { theme } from "./theme";
 import { ThemeProvider } from "@mui/material";
+import ErrorBoundary from "./components/commons/ErrorBoundary";
 
 const queryClient = new QueryClient();
 
@@ -15,10 +16,12 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider theme={theme}>
-      <HashRouter>
-        <App />
-      </HashRouter>
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider theme={theme}>
+        <HashRouter>
+          <App />
+        </HashRouter>
+      </ThemeProvider>
+    </ErrorBoundary>
   </QueryClientProvider>
 );

@@ -17,7 +17,7 @@ export const Counter = ({ title, value, changeValue }: CounterProps) => {
     );
 
   return (
-    <Box>
+    <Box data-testid={`${title}-counter`}>
       {title}:
       <IconButton
         aria-label={`counter-${title}-incrementButton`}

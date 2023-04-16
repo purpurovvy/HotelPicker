@@ -10,7 +10,7 @@ export const UnknownError = ({
 }: UnknownErrorProps): JSX.Element => {
   return (
     <ErrorAnimation error="unknown">
-      <Typography variant="h1" sx={{ textAlign: "center" }}>
+      <Typography variant="h3" sx={{ textAlign: "center" }}>
         {description}
       </Typography>
     </ErrorAnimation>

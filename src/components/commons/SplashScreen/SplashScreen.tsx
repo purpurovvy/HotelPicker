@@ -10,7 +10,7 @@ interface SplashScreenProps {
 
 export const SplashScreen = ({
   isVisible,
-  transitionTimeInSeconds = 1,
+  transitionTimeInSeconds = 2,
 }: SplashScreenProps) => {
   const [isInDOM, setIsInDOM] = useState<boolean>(true);
 
@@ -30,9 +30,9 @@ export const SplashScreen = ({
       alignItems="center"
       data-testid="splashScreen"
       sx={{
-        ...SplashScreenStyles,
         transition: `opacity ${transitionTimeInSeconds}s`,
         opacity: isVisible ? 1 : 0,
+        ...SplashScreenStyles,
       }}
     >
       <Loading />
