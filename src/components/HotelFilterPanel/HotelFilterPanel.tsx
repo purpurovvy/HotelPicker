@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { StarFilter } from "./StarFilter";
 import { Stack } from "@mui/material";
-import { Counter } from "../commons/Counter";
+import { Counter } from "../commons/Counter/Counter";
 import { useState } from "react";
 import { HotelModel } from "../../api/model/HotelModel";
 import { filterHotelsByRequirements } from "./filterHotelsByRequirements/filterHotelsByRequirements";
