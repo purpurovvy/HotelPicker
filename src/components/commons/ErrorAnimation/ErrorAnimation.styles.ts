@@ -3,7 +3,7 @@ export const ErrorAnimationStyles = {
   animationContainer: {
     alignItems: "center",
     justifyContent: "center",
-    width: "80dvw",
+    maxWidth: "80dvw",
     height: "50dvh",
     maxHeight: "500px",
     m: "auto",
